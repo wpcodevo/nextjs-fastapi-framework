@@ -6,4 +6,4 @@ nextjs-packages:
 	pnpm add concurrently
 
 py-modules:
-	pip install fastapi uvicorn pydantic
+	pip install fastapi pydantic 'uvicorn[standard]'
