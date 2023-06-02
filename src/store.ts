@@ -18,11 +18,15 @@ type TodoStore = {
   deleteTodo: (id: number) => void;
 };
 
+const URL = process.env.NEXT_PUBLIC_VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api`
+  : "http://localhost:3000/api";
+
 export const useStore = create<TodoStore>((set) => ({
   todos: [],
   fetchTodos: async () => {
     try {
-      const response = await fetch("/api/todos");
+      const response = await fetch(`${URL}/todos`);
       const todos = await response.json();
       set({ todos });
     } catch (error) {
@@ -31,7 +35,7 @@ export const useStore = create<TodoStore>((set) => ({
   },
   addTodo: async (todo) => {
     try {
-      const response = await fetch("/api/todos", {
+      const response = await fetch(`${URL}/todos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +50,7 @@ export const useStore = create<TodoStore>((set) => ({
   },
   updateTodo: async (updatedTodo) => {
     try {
-      const response = await fetch(`/api/todos/${updatedTodo.id}`, {
+      const response = await fetch(`${URL}/todos/${updatedTodo.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +69,7 @@ export const useStore = create<TodoStore>((set) => ({
   },
   deleteTodo: async (id) => {
     try {
-      await fetch(`/api/todos/${id}`, {
+      await fetch(`${URL}/todos/${id}`, {
         method: "DELETE",
       });
       set((state) => ({

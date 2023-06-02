@@ -7,6 +7,7 @@ export default function TodoForm() {
   const [newTodo, setNewTodo] = useState("");
 
   const handleCreateTodo = async () => {
+    if (newTodo.length === 0) return alert("Todo input must not be empty");
     try {
       setLoading(true);
       const todo = { title: newTodo };

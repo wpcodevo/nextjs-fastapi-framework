@@ -39,7 +39,9 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
       </span>
       <button
         disabled={loading}
-        className="px-2 py-1 bg-red-500 text-white rounded"
+        className={`px-2 py-1 text-white rounded ${
+          loading ? "bg-gray-400" : "bg-red-500"
+        }`}
         onClick={handleDelete}
       >
         Delete
