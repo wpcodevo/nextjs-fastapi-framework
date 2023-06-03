@@ -1,3 +1,5 @@
+from typing import Union
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -14,8 +16,8 @@ class TodoCreate(BaseModel):
 
 
 class TodoUpdate(BaseModel):
-    title: str | None = None
-    completed: bool | None = None
+    title: Union[str, None] = None
+    completed: Union[bool, None] = None
 
 
 class TodoItem(BaseModel):
