@@ -1,3 +1,4 @@
+import os
 from typing import Union
 
 from fastapi import FastAPI
@@ -6,8 +7,10 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+vercel_url = os.environ.get("VERCEL_URL")
+
 origins = [
-    "https://nextjs-fastapi-framework.vercel.app"
+    vercel_url
 ]
 
 app.add_middleware(
