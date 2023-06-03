@@ -3,7 +3,6 @@
 import TodoForm from "@/components/TodoForm";
 import TodoItem from "@/components/TodoItem";
 import { useStore } from "@/store";
-import Link from "next/link";
 import { useEffect } from "react";
 
 const Home: React.FC = () => {
@@ -18,7 +17,6 @@ const Home: React.FC = () => {
     <div className="container mx-auto max-w-md p-4">
       <TodoForm />
       <h1 className="text-2xl font-bold mb-4">Todo List</h1>
-      <Link href="/api/python">Visit Python</Link>
       {todos.length === 0 ? (
         <p className="text-center">No Todos Found</p>
       ) : (
