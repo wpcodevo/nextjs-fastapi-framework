@@ -6,6 +6,12 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+
+@app.get("/api/healthchecker")
+def healthchecker():
+    return {"message": "Integrate FastAPI Framework with Next.js"}
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
