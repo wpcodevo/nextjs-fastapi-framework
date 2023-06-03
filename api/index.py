@@ -7,7 +7,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 origins = [
-    "https://nextjs-fastapi-framework-w5m5e98f4-ziddahedem.vercel.app"
+    "https://nextjs-fastapi-framework.vercel.app"
 ]
 
 app.add_middleware(
