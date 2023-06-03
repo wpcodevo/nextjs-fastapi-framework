@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get("/api/healthchecker")
 def healthchecker():
-    return {"message": "Integrate FastAPI Framework with Next.js"}
+    return {"status": "success", "message": "Integrate FastAPI Framework with Next.js"}
 
 
 app.add_middleware(
