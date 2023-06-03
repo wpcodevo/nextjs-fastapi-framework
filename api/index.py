@@ -1,4 +1,3 @@
-import os
 from typing import Union
 
 from fastapi import FastAPI
@@ -7,15 +6,9 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-vercel_url = os.environ.get("VERCEL_URL")
-
-origins = [
-    vercel_url
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
