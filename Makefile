@@ -3,7 +3,7 @@ commands:
 	source venv/bin/activate
 
 nextjs-packages:
-	pnpm add concurrently
+	pnpm add concurrently zustand
 
 py-modules:
-	pip install fastapi pydantic 'uvicorn[standard]'
+	pip install fastapi 'uvicorn[standard]'
