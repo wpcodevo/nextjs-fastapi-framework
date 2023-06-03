@@ -6,11 +6,6 @@ from pydantic import BaseModel
 app = FastAPI()
 
 
-@app.get("/api/python")
-def hello_world():
-    return {"message": "Hello World"}
-
-
 class TodoCreate(BaseModel):
     title: str
 
